@@ -12,7 +12,11 @@ Download and install Kamel operator
 
   kamel install --cluster-setup
   kamel install
+
+Create the configmap with the broker configuration
+
+  oc create configmap camelkafka --from-file=application.properties
   
 Run the CamelKafka.java class.
 
-  kamel run CamelKafka.java --dev
+  kamel run CamelKafka.java --configmap=camelkafka --dev
