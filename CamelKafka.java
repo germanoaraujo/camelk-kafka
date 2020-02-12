@@ -14,7 +14,7 @@ public class CamelKafka extends RouteBuilder {
     String kafkaDestination = "kafka:"+kafkaTopic+"?brokers="+kafkaBootstrap;
 
     from("timer:message-publisher")
-      .setBody().simple("Ramalho publishing into Kafka")
+      .setBody().simple("Publishing message to Kafka using CamelK")
       .setHeader(KafkaConstants.KEY, constant("Camel")) // Key of the message
     .to(kafkaDestination);
 
