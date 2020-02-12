@@ -1,0 +1,18 @@
+= Camel K and Kafka
+
+Considering that you already have an Strimzi cluster available.
+
+Go to othe Strimzi project:
+
+  oc new-project <your-project>
+  
+Download and install Kamel operator
+
+* https://github.com/apache/camel-k/releases[Kamel]
+
+  kamel install --cluster-setup
+  kamel install
+  
+Run the CamelKafka.java class.
+
+  kamel run CamelKafka.java --dev
