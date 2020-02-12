@@ -16,9 +16,9 @@ public class CamelKafka extends RouteBuilder {
     from("timer:message-publisher")
       .setBody().simple("Ramalho publishing into Kafka")
       .setHeader(KafkaConstants.KEY, constant("Camel")) // Key of the message
-    .to("kafka:my-topic?brokers=my-cluster-kafka-bootstrap:9092");
+    .to(kafkaDestination);
 
-    from("kafka:my-topic?brokers=my-cluster-kafka-bootstrap:9092")
+    from(kafkaDestination)
       .log("Message received from Kafka : ${body}")
       .log("    on the topic ${headers[kafka.TOPIC]}")
       .log("    on the partition ${headers[kafka.PARTITION]}")
