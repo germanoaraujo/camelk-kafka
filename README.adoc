@@ -1,17 +1,16 @@
 = Camel K and Kafka
 
-Considering that you already have an Strimzi cluster available.
+Considering that you already have a Kafka Cluster Running.
 
-Go to othe Strimzi project:
+If not you can install Camel K Operator and Strimzi Operator from OperatorHub.
+
+Go to the Strimzi project:
 
   oc new-project <your-project>
   
-Download and install Kamel operator
+Download and install Kamel in your machine
 
 * https://github.com/apache/camel-k/releases[Kamel]
-
-  kamel install --cluster-setup
-  kamel install
 
 Create the configmap with the broker configuration
 
